@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Author_id</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for b in books %}
+                <tr>
+                    <th scope="row">{{ b.id }}</th>
+                    <td>{{ b.Name }}</td>
+                    <td>{{ b.Author_id }}</td>
+                    <td>{{ b.Price }}</td>
+                    <td>{{ b.Quantity }}</td>
+                    <td>
+                        {#<a href="{{ path('b_details', {'id': b.id}) }} " class='btn btn-success'>View</a>#}
+                        {#<a href="{{ path('b_edit', {'id': b.id}) }}" class='btn btn-default'>Edit</a>#}
+                        {#<a href="{{ path('b_delete', {'id': b.id}) }}" class='btn btn-danger'>Delete</a>#}
+                        <a href="{{ path('b_details', {'id': b.id}) }} " class='btn btn-success'>View</a> 
+                        <a href="#" class='btn btn-default'>Edit</a>
+                        <a href="#" class='btn btn-danger'>Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

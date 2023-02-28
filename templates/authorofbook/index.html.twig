@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Book_id</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for au in aob %}
+                <tr>
+                    <th scope="row">{{ au.id }}</th>
+                    <td>{{ au.Book_id }}</td>
+                    <td>
+                        {#<a href="{{ path('au_details', {'id': au.id}) }} " class='btn btn-success'>View</a>#}
+                        {#<a href="{{ path('au_edit', {'id': au.id}) }}" class='btn btn-default'>Edit</a>#}
+                        {#<a href="{{ path('au_delete', {'id': au.id}) }}" class='btn btn-danger'>Delete</a>#}
+                        <a href="{{ path('au_details', {'id': au.id}) }} " class='btn btn-success'>View</a> 
+                        <a href="#" class='btn btn-default'>Edit</a>
+                        <a href="#" class='btn btn-danger'>Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
